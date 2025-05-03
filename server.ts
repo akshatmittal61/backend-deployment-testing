@@ -1,15 +1,6 @@
-import express from "express";
 import { PORT } from "./config";
-import { apiRouter } from "./routes";
+import { Server } from "./connections";
+import { dbUri } from "./constants";
 
-const app = express();
-
-app.get("/api/health", (_, res) => {
-	res.status(200).json({ message: "Server is healthy" });
-});
-
-app.use("/api", apiRouter);
-
-app.listen(PORT, () => {
-	console.log(`Server is running on port ${PORT}`);
-});
+const server = new Server(PORT, dbUri);
+server.start();
