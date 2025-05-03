@@ -1,7 +1,10 @@
 {
-  "name": "vercel-tryout-backend",
+  "name": "backend-deployment-testing",
+  "description": "Simple backend server to test deployment on free services",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.ts",
+  "private": false,
+  "repository": "https://github.com/akshatmittal61/backend-deployment-testing.git",
   "scripts": {
     "start": "node build/server.js",
     "dev": "nodemon server.ts",
@@ -10,9 +13,8 @@
     "clean": "rm -rf build && rm -rf coverage"
   },
   "keywords": [],
-  "author": "",
+  "author": "Akshat Mittal <akshatmittal2506@gmail.com>",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.1",
