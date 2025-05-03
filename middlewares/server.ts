@@ -4,7 +4,7 @@ import { DatabaseManager } from "../connections";
 import { HTTP } from "../constants";
 import { Logger } from "../log";
 import { ApiRequest, ApiResponse } from "../types";
-import { ApiError } from "../utils";
+import { ApiFailure } from "../utils";
 
 export const parseCookies = (
 	req: ApiRequest,
@@ -37,7 +37,7 @@ export const useDb =
 				if (isConnected) {
 					return next();
 				} else {
-					return ApiError(res).send(
+					return new ApiFailure(res).send(
 						HTTP.message.DB_CONNECTION_ERROR,
 						HTTP.status.SERVICE_UNAVAILABLE
 					);
